@@ -1,0 +1,17 @@
+[Unit]
+Description=Minimal Hello Service (no Python needed)
+After=network.target
+
+[Service]
+Type=simple
+User=dibia
+WorkingDirectory=/home/dibia/systemd-hello
+ExecStart=/home/dibia/systemd-hello/src/timeupdate.sh
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
+UNIT
